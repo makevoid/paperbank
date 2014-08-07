@@ -1,5 +1,7 @@
 # Thermal Printer + QR Codes + Bitcoin + Ruby
 
+check other branches for future enhancements
+
 ### prerequisites
 
 I don't know about the other OSes but
