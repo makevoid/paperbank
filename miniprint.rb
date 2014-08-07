@@ -1,3 +1,6 @@
+require 'escper' # https://github.com/michaelfranzl/ruby-escper
+require 'rqrcode_png'
+
 require_relative "miniprint_lib"
 include MiniprintLib
 
@@ -5,10 +8,9 @@ include MiniprintLib
 # or sudo chmod 0666 /dev/usb/lp1
 
 PRINTER = "/dev/usb/lp1"
-
 DATA = "1Jxvq97AasVEWM26pdG5eJaoNxak7pPVup"
-TEMPLATE = "main"
 
+TEMPLATE = "main"
 
 # main
 

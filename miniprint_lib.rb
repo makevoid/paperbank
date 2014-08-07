@@ -1,14 +1,13 @@
 module MiniprintLib
 
-  require 'escper' # https://github.com/michaelfranzl/ruby-escper
-
+  # rqrcode
   def qrcode_img(string)
-    require 'rqrcode_png'
     qr = RQRCode::QRCode.new(string, size: 4, level: :h )
     png = qr.to_img                                             # returns an instance of ChunkyPNG
     png.resize 350, 350
   end
 
+  # escper
   def print_img_send(path)
     File.open(PRINTER,'w') do |f|
       f.write Escper::Img.new(path, :file).to_s
