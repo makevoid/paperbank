@@ -4,11 +4,33 @@ require 'rqrcode_png'
 require_relative "miniprint_lib"
 include MiniprintLib
 
+
+require_relative "lib/vendor/keygen"
+
+
+require 'bitcoin' # bitcoin-ruby
+
+g = KeyGenerator.new
+key = g.get_key 0
+
+# puts key.pub      #OpenSSL::BN.from_hex(priv)
+# puts key.priv
+
+# Bitcoin::OpenSSL_EC.regenerate_key(priv)[1]
+
+# vanitygen_cmd = "/home/makevoid/Sites/vanitygen/vanitygen"
+# `#{vanitygen} 1Asd`
+# parse output
+
+
+
 # note: execute with sudo
 # or sudo chmod 0666 /dev/usb/lp1
 
 PRINTER = "/dev/usb/lp1"
-DATA = "1Jxvq97AasVEWM26pdG5eJaoNxak7pPVup"
+
+
+DATA = key.pub  # "1Jxvq97AasVEWM26pdG5eJaoNxak7pPVup"
 
 TEMPLATE = "main"
 
@@ -17,16 +39,30 @@ TEMPLATE = "main"
 template = TEMPLATE
 image_file = "templates/#{template}.png"
 
-qr = qrcode_img DATA
+qr = qrcode_img "asd"
 qr.save image_file
 
-
 # debug
+# puts key.addr
+# print_send key.addr
+# space
+
+
+# final
+
+# image
 print_img_send image_file
 space
 
-
-
+#pub
+print_send key.addr[0..20]
+print_send key.addr[21..-1]
+space
+space
+#priv
+print_send "PRIVATE KEY (keep secret):\n"
+print_send key.priv
+space
 
 
 

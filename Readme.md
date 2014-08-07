@@ -1,6 +1,16 @@
 # Thermal Printer + QR Codes + Bitcoin + Ruby
 
-check other branches for future enhancements
+VANITY branch
+
+- next step, use vanitygen fast c implementation
+
+- right now: using ruby HDW keygen (has a very simple pure ruby implementation)
+
+  g = KeyGenerator.new
+  puts g.get_key(0)
+
+
+
 
 ### prerequisites
 
@@ -15,6 +25,8 @@ on linux it's all pretty easy
 - gem install escper
 
 - gem install rqrcode_png
+
+- gem install openssl
 
 - edit miniprint.rb
 
