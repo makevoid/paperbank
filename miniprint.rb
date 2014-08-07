@@ -1,31 +1,16 @@
+require_relative "miniprint_lib"
+include MiniprintLib
+
 # note: execute with sudo
 # or sudo chmod 0666 /dev/usb/lp1
+
+PRINTER = "/dev/usb/lp1"
 
 DATA = "1Jxvq97AasVEWM26pdG5eJaoNxak7pPVup"
 TEMPLATE = "main"
 
 
-def qrcode_img(string)
-  require 'rqrcode_png'
-  qr = RQRCode::QRCode.new(string, size: 4, level: :h )
-  png = qr.to_img                                             # returns an instance of ChunkyPNG
-  png.resize 350, 350
-end
-
-def print_send
-  `cat templates/#{TEMPLATE}.txt > /dev/usb/lp1`
-  # `cat templates/img32.png > /dev/usb/lp1`
-end
-
-def print_img_send(path)
-  # https://github.com/michaelfranzl/ruby-escper
-  require 'escper'
-  Escper::Img.new(path, :file).to_s
-end
-
-def debug(file)
-  `nautilus #{file}`
-end
+# main
 
 template = TEMPLATE
 image_file = "templates/#{template}.png"
@@ -33,9 +18,10 @@ image_file = "templates/#{template}.png"
 qr = qrcode_img DATA
 qr.save image_file
 
-# debug image_file
-print_img_send image_file
 
+# debug
+print_img_send image_file
+space
 
 
 
@@ -70,6 +56,12 @@ print_img_send image_file
 #         "white"
 #     end
 #   end
+# end
+
+
+# def print_send
+#   `cat templates/#{TEMPLATE}.txt > /dev/usb/lp1`
+#   # `cat templates/img32.png > /dev/usb/lp1`
 # end
 
 
