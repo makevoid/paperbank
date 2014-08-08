@@ -39,32 +39,35 @@ TEMPLATE = "main"
 template = TEMPLATE
 image_file = "templates/#{template}.png"
 
-qr = qrcode_img "asd"
+qr = qrcode_img key.addr
 qr.save image_file
 
 # debug
-# puts key.addr
-# print_send key.addr
-# space
-
-
-# final
-
-# image
-print_img_send image_file
+puts key.addr
+print_send key.addr
 space
 
-#pub
+
+final
+
+# qr pub
+print_img_send image_file
+space
+# pub
 print_send key.addr[0..20]
 print_send key.addr[21..-1]
 space
+space
+space
+# qr priv
+qr = qrcode_img key.priv
+qr.save image_file
+print_img_send image_file
 space
 #priv
 print_send "PRIVATE KEY (keep secret):\n"
 print_send key.priv
 space
-
-
 
 
 ###

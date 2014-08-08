@@ -2,9 +2,11 @@ module MiniprintLib
 
   # rqrcode
   def qrcode_img(string)
-    qr = RQRCode::QRCode.new(string, size: 4, level: :h )
+    # for private keys you need bigger size
+    size = string.size < 40 ? 4 : 7
+    qr = RQRCode::QRCode.new(string, size: size, level: :h )
     png = qr.to_img                                             # returns an instance of ChunkyPNG
-    png.resize 350, 350
+    png.resize 370, 370
   end
 
   # escper
