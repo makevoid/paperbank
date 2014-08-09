@@ -84,8 +84,7 @@ I will provide other generators support in the near future such as
 #### [the thermal printer I got](http://www.aliexpress.com/item/Barcode-scanner-and-58mm-printer-USB-mini-thermal-receipt-printer-ticket-pos-portable-laser-printers-freeshipping/1544271573.html) (40USD or less)
 
 - [a similar thermal printer on amazon](http://www.amazon.com/Imagestore-Brainydeal-SC9-2012-High-speed-Receipt/dp/B005HH2YVY/ref=sr_1_2?ie=UTF8&qid=1407576243&sr=8-2&keywords=thermal+printer)
-- [thermals printers on aliexpress]("http://www.aliexpress.com/wholesale?SearchText=thermal%20printer")
--
+- [thermal printers on aliexpress](http://www.aliexpress.com/wholesale?SearchText=thermal%20printer)
 
 #### a raspberry PI or similar cheap linux box that you can keep always offline
 
@@ -121,11 +120,10 @@ rasp pi links:
 
     `git clone https://github.com/makevoid/paperbank`
 
-- cd and switch branch
+
+- install ruby gems
 
 ```
-cd paperbank; git branch main`
-
 sudo gem install escper         --no-ri --no-rdoc
 sudo gem install rqrcode_png    --no-ri --no-rdoc
 sudo gem install bitcoin-ruby   --no-ri --no-rdoc
