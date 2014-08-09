@@ -2,7 +2,10 @@
 
 #### Bitcoin Paper Wallet Bank
 
-[video]
+
+[https://www.youtube.com/watch?v=CUM51acMHJY]( ![](http://uploads.makevoid.com/paperbank_final.png) )
+
+
 
 ### Bringing together: a thermal printer + QR Codes + Bitcoin + Ruby = awesome
 
