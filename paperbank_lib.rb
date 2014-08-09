@@ -1,4 +1,4 @@
-module MiniprintLib
+module PaperBankLib
 
   # rqrcode
   def qrcode_img(string)
@@ -15,6 +15,20 @@ module MiniprintLib
       f.write Escper::Img.new(path, :file).to_s
     end
   end
+
+  # view
+
+  def format_addr(addr)
+    spaces = 3
+    addr_fmt = addr.split("").each_slice(4).with_index.map do |a, idx|
+      ret = ""
+      ret = "\n#{" "*(spaces+2)}" if idx == 4
+      a.join("") + ret
+    end.join(" ")
+    "#{" "*spaces}#{addr_fmt}"
+  end
+
+
 
   # utils
 

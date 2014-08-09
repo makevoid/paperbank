@@ -9,6 +9,8 @@
 This repo contains **all you need** to run your bitcoin PaperBank!
 PaperBank is another way to say: cold storage paper wallet printer
 
+Affordable: All for under ~ 60 USD
+
 #### Brief explanation:
 
 - Cold storage: because it remains offline
@@ -23,6 +25,10 @@ and:
 
 You can then print wallets for yourself, or paper wallets where you deposit small amounts (ex: a buck or two) for friends that want to try bitcoin!
 
+note: It doesn't provide a real banking "feature", just the generations of accounts (address/private key pairs), you have to apply phisical security measure to those wallets!
+
+Donate to get password encrypted wallets sooner!
+
 
 ### Please Donate!
 
@@ -30,6 +36,45 @@ You can then print wallets for yourself, or paper wallets where you deposit smal
 
 I will generate a vanity address soon.
 (todo: put this text at the end of Readme.md as well)
+
+
+
+### small FAQ
+
+- why Paper Wallets?
+
+They are very useful as cold storage, and there are many undiscovered usages of having btc in "banknotes" form.
+
+You can print small banknotes (2mBTC - 20mBTC ~ 1 - 10 euro) and give it to your friends to let them try bitcoin.
+
+You can have paper wallets with your funds
+
+- why a thermal printer?
+
+The ability to create fast and cheap paper wallets it's key. The thing is
+
+- why Rasp - pi?
+
+It's very cheap and widespread, you can use any linux box if you like, just remember to not connect it to the internet anymore
+
+- why Mycelium?
+
+You can use whichever wallet you prefer, I found mycelium to be pretty straightforward in terms of cold storage, for maximum security you should always sign transactions offline :)
+
+- why Ruby?
+
+It was very fast to implement and to tinker with, you can go and rewrite it in your own favourite language.
+
+
+
+#### other generators
+
+I will provide other generators support in the near future such as
+
+- vanitygen
+- HDW address generation
+- another non bitcoin-ruby address generation lbrary
+
 
 
 ### What you need:
@@ -40,7 +85,7 @@ I will generate a vanity address soon.
 
 - [a similar thermal printer on amazon](http://www.amazon.com/Imagestore-Brainydeal-SC9-2012-High-speed-Receipt/dp/B005HH2YVY/ref=sr_1_2?ie=UTF8&qid=1407576243&sr=8-2&keywords=thermal+printer)
 - [thermals printers on aliexpress]("http://www.aliexpress.com/wholesale?SearchText=thermal%20printer")
-- 
+-
 
 #### a raspberry PI or similar cheap linux box that you can keep always offline
 
@@ -59,19 +104,19 @@ rasp pi links:
 - install raspbian and run it
 
 - after install, open LXTerminal
-    
+
 - install ssl-dev
- 
+
     `sudo apt-get install libssl-dev -y`
-    
+
 - install ruby development files
 
     `sudo apt-get install ruby1.9.1-dev -y`
 
-- install rmagick dependencies 
+- install rmagick dependencies
 
     `sudo apt-get install libmagickcore-dev libmagickwand-dev -y`
-    
+
 - get the code
 
     `git clone https://github.com/makevoid/paperbank`
@@ -103,17 +148,17 @@ cat templates/test.txt > /dev/usb/lp0
 
 - run
 
-    `ruby miniprint.rb`
-    
+    `ruby paperbank.rb`
+
 
 on raspberry the printing is very slow! I will speed that up in the future!
 
 - throw away the key you just created (you should have two copies)
-    
+
 - DISCONNECT INTERNET and NEVER RECONNECT AGAIN (otherwise you lose all the benefits of the cold storage)
 
 
-you now have a cold paper wallets machine! enjoy! 
+you now have a cold paper wallets machine! enjoy!
 
 
 
@@ -128,9 +173,9 @@ check also VANITY branch for vanity address implementations
 
 ### Donations, forks and new features!
 
-#### **Please donate** 
-some milliBits so I can find time to improve this project: 
-#### `1EiNgZmQsFN4rJLZJWt93quMEz3X82FJd2` 
+#### **Please donate**
+some milliBits so I can find time to improve this project:
+#### `1EiNgZmQsFN4rJLZJWt93quMEz3X82FJd2`
 
 Or fork it and improve it yourself!
 
@@ -140,6 +185,15 @@ Features/forks needed/expected:
 - feature: passphrase patch - support password protected private key
 - feature: add hardware button to rasp pi via GPIO
 - feature: autolaunch everything, so you don't need an hdmi screen
+- dependencies: try to remove imagemagick & rmagick requirements
+- dependencies: remove bitcoin-ruby requirement by extracting code from it
 - speed: printing speedup (manage memory more efficiently)
 - speed: lower language optimizations
 
+
+The more donations, the faster the features!
+Thanks to all the bitcoin community!
+
+See another project I did with some friends: [http://donacoin.com](donacoin.com) - [https://github.com/makevoid/donacoin](github.com/makevoid/donacoin) A cryptocoin mining based donation system
+
+Another one, not bitcoin related: [http://thorrents.com](thorrents.com) - [https://github.com/makevoid/thorrents](github:makevoid/thorrents)
