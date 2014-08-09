@@ -1,11 +1,15 @@
 # PaperBank
 
-### Thermal Printer + QR Codes + Bitcoin + Ruby = Bitcoin Paper Wallet Bank
+#### Bitcoin Paper Wallet Bank
 
 [video]
 
-This repo contains all you need to run your bitcoin PaperBank!
+### Bringing together: a thermal printer + QR Codes + Bitcoin + Ruby = awesome
+
+This repo contains **all you need** to run your bitcoin PaperBank!
 PaperBank is another way to say: cold storage paper wallet printer
+
+#### Brief explanation:
 
 - Cold storage: because it remains offline
 - Prints Paper wallets
@@ -32,14 +36,13 @@ I will generate a vanity address soon.
 
 - a thermal printer that works with linux
 
-This model: 40USD or less
+#### [the thermal printer I got](http://www.aliexpress.com/item/Barcode-scanner-and-58mm-printer-USB-mini-thermal-receipt-printer-ticket-pos-portable-laser-printers-freeshipping/1544271573.html) (40USD or less)
 
-- [the thermal printer I got](http://www.aliexpress.com/item/Barcode-scanner-and-58mm-printer-USB-mini-thermal-receipt-printer-ticket-pos-portable-laser-printers-freeshipping/1544271573.html)
 - [a similar thermal printer on amazon](http://www.amazon.com/Imagestore-Brainydeal-SC9-2012-High-speed-Receipt/dp/B005HH2YVY/ref=sr_1_2?ie=UTF8&qid=1407576243&sr=8-2&keywords=thermal+printer)
 - [thermals printers on aliexpress]("http://www.aliexpress.com/wholesale?SearchText=thermal%20printer")
+- 
 
-
-- a raspberry PI or similar cheap linux box that you can keep always offline
+#### a raspberry PI or similar cheap linux box that you can keep always offline
 
 
 rasp pi links:
@@ -52,7 +55,10 @@ rasp pi links:
 ### Install on raspberry pi
 
 - get a brand new sd card or do a safe format
-- open LXTerminal
+- get NOOBS release from raspbian official website! (check the sha) and copy it to the sd
+- install raspbian and run it
+
+- after install, open LXTerminal
     
 - install ssl-dev
  
@@ -112,46 +118,13 @@ you now have a cold paper wallets machine! enjoy!
 
 
 
-
-### notes
-
-`pcmanfm .` opens the file manager into the current directory
+#### notes:
 
 put something inside the the LAN hole so no-one can accidentally connect an ethernet cable, a piece of sponge will do  in most cases, a chewing gum is a bit extreme and not recommended if you want to use that ethernet port again :)
-
-
-
-
-
-configure your printer and your receiving address:
-
-    PRINTER = "/dev/usb/lp1"
-    DATA = "1Jxvq9...pPVup"
-
-
-### running
-
-
-    ruby miniprint.rb
-
-
-this should work on Debian out of the box!
-
-
----
-
-note: This branch and the VANITY branch should be used to create paper wallets with a thermal usb printer.
-
 
 check also VANITY branch for vanity address implementations
 
 
-- maybe use ruby HDW keygen (has a very simple pure ruby implementation)
-
-```
-g = KeyGenerator.new
-puts g.get_key(0)
-```
 
 ### Donations, forks and new features!
 
