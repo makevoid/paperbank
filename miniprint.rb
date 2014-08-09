@@ -11,7 +11,7 @@ require_relative "lib/vendor/keygen"
 require 'bitcoin' # bitcoin-ruby
 
 g = KeyGenerator.new
-key = g.get_key 0
+@key = g.get_key 0
 
 # puts key.pub      #OpenSSL::BN.from_hex(priv)
 # puts key.priv
@@ -30,45 +30,65 @@ key = g.get_key 0
 PRINTER = "/dev/usb/lp1"
 
 
-DATA = key.pub  # "1Jxvq97AasVEWM26pdG5eJaoNxak7pPVup"
 
 TEMPLATE = "main"
 
 # main
 
 template = TEMPLATE
-image_file = "templates/#{template}.png"
+@image_pub  = "templates/#{template}.png"
+@image_priv = "templates/#{template}_priv.png"
 
-qr = qrcode_img key.addr
-qr.save image_file
+qr = qrcode_img @key.addr
+qr.save @image_pub
 
 # debug
-puts key.addr
-print_send key.addr
-space
+# puts key.addr
+# print_send key.addr
+# space
+
+def format_addr(addr)
+  spaces = 3
+  addr_fmt = addr.split("").each_slice(4).with_index.map do |a, idx|
+    ret = ""
+    ret = "\n#{" "*(spaces+2)}" if idx == 4
+    a.join("") + ret
+  end.join(" ")
+  "#{" "*spaces}#{addr_fmt}"
+end
 
 
-final
+def print_one
+  # qr pub
+  print_send "BTC Paper Wallet"
+  line
+  print_send "ADDRESS"
+  print_img_send @image_pub
+  # pub
+  print_send format_addr @key.addr
+  space
+  # qr priv
+  print_send "PRIVATE KEY (keep secret!):\n"
+  priv = @key.to_base58 # ,priv, also there's to_bip38(passphrase) available
+  qr = qrcode_img  priv
+  qr.save @image_priv
+  print_img_send @image_priv
+  #priv
+  print_send priv
+  line
+  line
+end
 
-# qr pub
-print_img_send image_file
-space
-# pub
-print_send key.addr[0..20]
-print_send key.addr[21..-1]
-space
-space
-space
-# qr priv
-qr = qrcode_img key.priv
-qr.save image_file
-print_img_send image_file
-space
-#priv
-print_send "PRIVATE KEY (keep secret):\n"
-print_send key.priv
-space
 
+### final
+
+print_one
+sleep 6
+print_one
+
+# todo: use tempfiles ffs
+`rm -f #{@image_pub}`
+`rm -f #{@image_priv}`
 
 ###
 
@@ -104,17 +124,5 @@ space
 #   `cat templates/#{TEMPLATE}.txt > /dev/usb/lp1`
 #   # `cat templates/img32.png > /dev/usb/lp1`
 # end
-
-
-
-
-###
-
-# save DATA
-# escper TEMPLATE
-
-# save img
-# # save qrcode DATA
-# print_send
 
 

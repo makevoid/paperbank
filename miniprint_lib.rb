@@ -26,8 +26,12 @@ module MiniprintLib
     `cat templates/asd.txt > #{PRINTER}`
   end
 
+  def line
+    print_send "\n"
+  end
+
   def space
-    print_send "\n\n"
+    print_send "\n\n\n"
   end
 
   def print_send(string)
