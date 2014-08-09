@@ -56,45 +56,48 @@ rasp pi links:
     
 - install ssl-dev
  
-    sudo apt-get install libssl-dev -y
+    `sudo apt-get install libssl-dev -y`
     
 - install ruby development files
 
-    sudo apt-get install ruby1.9.1-dev -y
+    `sudo apt-get install ruby1.9.1-dev -y`
 
 - install rmagick dependencies 
 
-    sudo apt-get install libmagickcore-dev libmagickwand-dev -y
+    `sudo apt-get install libmagickcore-dev libmagickwand-dev -y`
     
 - get the code
 
-    git clone https://github.com/makevoid/miniprint
+    `git clone https://github.com/makevoid/paperbank`
 
 - cd and switch branch
 
-    cd miniprint; git branch main
+```
+cd paperbank; git branch main`
 
-- sudo gem install escper         --no-ri --no-rdoc
-- sudo gem install rqrcode_png    --no-ri --no-rdoc
-- sudo gem install bitcoin-ruby   --no-ri --no-rdoc
-- sudo gem install ffi            --no-ri --no-rdoc
-
+sudo gem install escper         --no-ri --no-rdoc
+sudo gem install rqrcode_png    --no-ri --no-rdoc
+sudo gem install bitcoin-ruby   --no-ri --no-rdoc
+sudo gem install ffi            --no-ri --no-rdoc
+```
 
 
 if you are truly paranoid you can make the above steps offline, by transferring this repo and the ruby gems via usb stick and installing them manually
 
 - change
 
-    sudo chmod 0666 /dev/usb/lp0
+    `sudo chmod 0666 /dev/usb/lp0`
 
 - test the printer
 
-  echo "\nOK MASTER\n\n\n" > templates/test.txt
-  cat templates/test.txt > /dev/usb/lp0
+```
+echo "\nOK MASTER\n\n\n" > templates/test.txt
+cat templates/test.txt > /dev/usb/lp0
+```
 
 - run
 
-    ruby miniprint.rb
+    `ruby miniprint.rb`
     
 
 on raspberry the printing is very slow! I will speed that up in the future!
@@ -116,40 +119,9 @@ you now have a cold paper wallets machine! enjoy!
 
 put something inside the the LAN hole so no-one can accidentally connect an ethernet cable, a piece of sponge will do  in most cases, a chewing gum is a bit extreme and not recommended if you want to use that ethernet port again :)
 
-### MAIN branch
 
 
 
-check also VANITY branch for vanity address implementations
-
-
-
-
-- maybe use ruby HDW keygen (has a very simple pure ruby implementation)
-
-  g = KeyGenerator.new
-  puts g.get_key(0)
-
-
-
-
-### prerequisites
-
-I don't know about the other OSes but
-
-on linux it's all pretty easy
-
-- install ruby
-
-- install libmagick-dev and libmagickwand-dev
-
-- gem install escper
-
-- gem install rqrcode_png
-
-- gem install openssl
-
-- edit miniprint.rb
 
 configure your printer and your receiving address:
 
@@ -169,3 +141,30 @@ this should work on Debian out of the box!
 ---
 
 note: This branch and the VANITY branch should be used to create paper wallets with a thermal usb printer.
+
+
+check also VANITY branch for vanity address implementations
+
+
+- maybe use ruby HDW keygen (has a very simple pure ruby implementation)
+
+```
+g = KeyGenerator.new
+puts g.get_key(0)
+```
+
+### Donations, forks and new features!
+
+**Please donate** some milliBits so I can find time to improve this project: `1EiNgZmQsFN4rJLZJWt93quMEz3X82FJd2` 
+
+Or fork it and improve it yourself!
+
+Features/forks needed:
+
+- feature: Vanity address patch - add support for vanitygen
+- feature: passphrase patch - support password protected private key
+- feature: add hardware button to rasp pi via GPIO
+- feature: autolaunch everything, so you don't need an hdmi screen
+- speed: printing speedup (manage memory more efficiently)
+- speed: lower language optimizations
+
