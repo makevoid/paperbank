@@ -22,7 +22,7 @@ You can then print wallets for yourself, or paper wallets where you deposit smal
 
 ### Please Donate!
 
-BTC: 1EiNgZmQsFN4rJLZJWt93quMEz3X82FJd2
+#### BTC: `1EiNgZmQsFN4rJLZJWt93quMEz3X82FJd2`
 
 I will generate a vanity address soon.
 (todo: put this text at the end of Readme.md as well)
@@ -155,11 +155,13 @@ puts g.get_key(0)
 
 ### Donations, forks and new features!
 
-**Please donate** some milliBits so I can find time to improve this project: `1EiNgZmQsFN4rJLZJWt93quMEz3X82FJd2` 
+#### **Please donate** 
+some milliBits so I can find time to improve this project: 
+#### `1EiNgZmQsFN4rJLZJWt93quMEz3X82FJd2` 
 
 Or fork it and improve it yourself!
 
-Features/forks needed:
+Features/forks needed/expected:
 
 - feature: Vanity address patch - add support for vanitygen
 - feature: passphrase patch - support password protected private key
