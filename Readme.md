@@ -2,9 +2,9 @@
 
 check other branches for future enhancements
 
-MAIN branch will be the new master
-VANITY branch should have vanitygen integration
-this branch will be named HELLO_WORLD in the future, right now check the MAIN branch
+- MAIN branch will be the new master
+- VANITY branch should have vanitygen integration
+- this branch will be named HELLO_WORLD in the future, right now check the MAIN branch
 
 
 ## Installing 
