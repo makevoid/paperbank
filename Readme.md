@@ -1,6 +1,31 @@
-# Thermal Printer + QR Codes + Bitcoin + Ruby
+# PaperBank
 
-this branch and the VANITY branch should be used to create paper wallets with a thermal usb printer
+### Thermal Printer + QR Codes + Bitcoin + Ruby = awesome!
+
+[video]
+
+This repo contains all you need to run your bitcoin PaperBank!
+PaperBank is another way to say: cold storage paper wallet printer
+
+- Cold storage: because it remains offline
+- Prints Paper wallets
+
+and:
+
+- Cheap! You can get everything (Rasp PI + Thermal printer + sd card + cables) for 60 bucks or so
+- DIY
+- Secure
+
+
+You can then print wallets for yourself, or paper wallets where you deposit small amounts (ex: a buck or two) for friends that want to try bitcoin!
+
+
+### Please Donate!
+
+BTC: 1EiNgZmQsFN4rJLZJWt93quMEz3X82FJd2
+
+I will generate a vanity address soon.
+(todo: put this text at the end of Readme.md as well)
 
 
 ### What you need:
@@ -29,8 +54,12 @@ rasp pi links:
 - get a brand new sd card or do a safe format
 - open LXTerminal
     
+- install ssl-dev
+ 
+    sudo apt-get install libssl-dev -y
+    
 - install ruby development files
-- 
+
     sudo apt-get install ruby1.9.1-dev -y
 
 - install rmagick dependencies 
@@ -47,11 +76,17 @@ rasp pi links:
 
 - sudo gem install escper         --no-ri --no-rdoc
 - sudo gem install rqrcode_png    --no-ri --no-rdoc
+- sudo gem install bitcoin-ruby   --no-ri --no-rdoc
+- sudo gem install ffi            --no-ri --no-rdoc
 
 
 
 if you are truly paranoid you can make the above steps offline, by transferring this repo and the ruby gems via usb stick and installing them manually
-    
+
+- change
+
+    sudo chmod 0666 /dev/usb/lp0
+
 - test the printer
 
   echo "\nOK MASTER\n\n\n" > templates/test.txt
@@ -61,10 +96,18 @@ if you are truly paranoid you can make the above steps offline, by transferring 
 
     ruby miniprint.rb
     
+
+on raspberry the printing is very slow! I will speed that up in the future!
+
+- throw away the key you just created (you should have two copies)
     
 - DISCONNECT INTERNET and NEVER RECONNECT AGAIN (otherwise you lose all the benefits of the cold storage)
 
+
 you now have a cold paper wallets machine! enjoy! 
+
+
+
 
 
 ### notes
@@ -122,3 +165,7 @@ configure your printer and your receiving address:
 
 this should work on Debian out of the box!
 
+
+---
+
+note: This branch and the VANITY branch should be used to create paper wallets with a thermal usb printer.
