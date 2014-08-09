@@ -23,6 +23,14 @@ cubieboard (not tested)
 - get a brand new sd card or do a safe format
 - open LXTerminal
     
+- install ruby development files
+- 
+    sudo apt-get install ruby1.9.1-dev -y
+
+- install rmagick dependencies 
+
+    sudo apt-get install libmagickcore-dev libmagickwand-dev -y
+    
 - get the code
 
     git clone https://github.com/makevoid/miniprint
@@ -31,11 +39,10 @@ cubieboard (not tested)
 
     cd miniprint; git branch main
 
-- gem install escper         --no-ri --no-rdoc
-- gem install rqrcode_png    --no-ri --no-rdoc
+- sudo gem install escper         --no-ri --no-rdoc
+- sudo gem install rqrcode_png    --no-ri --no-rdoc
 
 
-- DISCONNECT INTERNET and NEVER RECONNECT AGAIN (otherwise you lose all the benefits of the cold storage)
 
 if you are truly paranoid you can make the above steps offline, by transferring this repo and the ruby gems via usb stick and installing them manually
     
@@ -47,19 +54,18 @@ if you are truly paranoid you can make the above steps offline, by transferring 
 - run
 
     ruby miniprint.rb
-
+    
+    
+- DISCONNECT INTERNET and NEVER RECONNECT AGAIN (otherwise you lose all the benefits of the cold storage)
 
 you now have a cold paper wallets machine! enjoy! 
 
 
-### not required
+### notes
 
+`pcmanfm .` opens the file manager into the current directory
 
-- install rmagick dependencies [ NOT REQUIRED ]
-
-    sudo apt-get install libmagickcore-dev libmagickwand-dev
-
-notes: `pcmanfm .` opens the file manager into the current directory
+put something inside the the LAN hole so no-one can accidentally connect an ethernet cable, a piece of sponge will do  in most cases, a chewing gum is a bit extreme and not recommended if you want to use that ethernet port again :)
 
 ### MAIN branch
 
