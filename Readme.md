@@ -10,7 +10,7 @@ on linux it's all pretty easy
 
 - install ruby
 
-- install libmagick-dev and libmagickwand-dev
+- install libmagickcore-dev and libmagickwand-dev (the first cna be libmagick-dev in some cases)
 
 - gem install escper
 
