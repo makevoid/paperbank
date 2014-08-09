@@ -1,6 +1,6 @@
 # PaperBank
 
-### Thermal Printer + QR Codes + Bitcoin + Ruby = awesome!
+### Thermal Printer + QR Codes + Bitcoin + Ruby = Bitcoin Paper Wallet Bank
 
 [video]
 
