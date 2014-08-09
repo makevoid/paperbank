@@ -8,14 +8,20 @@ this branch and the VANITY branch should be used to create paper wallets with a 
 - a thermal printer that works with linux
 
 This model: 40USD or less
-[insert aliexpress link here]
+
+- [the thermal printer I got](http://www.aliexpress.com/item/Barcode-scanner-and-58mm-printer-USB-mini-thermal-receipt-printer-ticket-pos-portable-laser-printers-freeshipping/1544271573.html)
+- [a similar thermal printer on amazon](http://www.amazon.com/Imagestore-Brainydeal-SC9-2012-High-speed-Receipt/dp/B005HH2YVY/ref=sr_1_2?ie=UTF8&qid=1407576243&sr=8-2&keywords=thermal+printer)
+- [thermals printers on aliexpress]("http://www.aliexpress.com/wholesale?SearchText=thermal%20printer")
 
 
 - a raspberry PI or similar cheap linux box that you can keep always offline
 
-rasp pi link
 
-cubieboard (not tested)
+rasp pi links:
+
+- [rasp pi](http://www.element14.com/community/community/raspberry-pi/raspberry-pi-bplus?ICID=rpimain-topban-BPlus)
+- [cubieboard on aliexpress](http://www.aliexpress.com/wholesale?SearchText=cubieboard) (should work the same, has better specs)
+- [olinuxino](https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-MICRO/open-source-hardware)
 
 
 ### Install on raspberry pi
