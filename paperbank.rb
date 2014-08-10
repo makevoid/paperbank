@@ -5,16 +5,15 @@ require 'bitcoin' # bitcoin-ruby
 require_relative "paperbank_lib"
 include PaperBankLib
 
-require_relative "lib/vendor/keygen"
-
 # note: chmod 666 /dev/usb/lp0
-PRINTER = "/dev/usb/lp0" # lp0 on rasp pi, on debian 7 is lp1 by default
-PRINTER = "/dev/usb/lp1" # dev only
+PRINTER = "/dev/usb/lp1" # on debian 7 is lp1 by default, choose lp0 if you want to use it with rasp pi
+# PRINTER = "/dev/usb/lp0" # rasp pi
+
+VANITYGEN_CMD = "/home/makevoid/Sites/vanitygen/vanitygen"
 
 class PaperBank
   def initialize(vanity_part)
-    vanitygen_cmd = "/home/makevoid/Sites/vanitygen/vanitygen"
-    output = `#{vanitygen_cmd} -v 1#{vanity_part} 2>&1`
+    output = `#{VANITYGEN_CMD} -v 1#{vanity_part} 2>&1`
 
     if output.match("Address:")
       address = output.match("Address: (.+?)\n")[1]
@@ -28,12 +27,18 @@ class PaperBank
 
   end
 
+  def print_once
+    prepare
+
+    print_one
+  end
+
   def print_pairs
     prepare
 
     print_one
-    # sleep 6
-    # print_one
+    sleep 6
+    print_one
   end
 
   private
@@ -77,4 +82,5 @@ class PaperBank
 end
 
 bank = PaperBank.new ARGV[0]
+# bank.print_one
 bank.print_pairs
