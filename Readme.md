@@ -35,7 +35,7 @@ Donate to get password encrypted wallets sooner!
 
 ### Please Donate!
 
-#### BTC: `1EiNgZmQsFN4rJLZJWt93quMEz3X82FJd2`
+#### BTC: `1PBank95kE4BZaQBfMsGZ3RCkqwwtGHjKA`
 
 I will generate a vanity address soon.
 (todo: put this text at the end of Readme.md as well)
@@ -176,7 +176,7 @@ check also VANITY branch for vanity address implementations
 
 #### **Please donate**
 some milliBits so I can find time to improve this project:
-#### `1EiNgZmQsFN4rJLZJWt93quMEz3X82FJd2`
+#### `1PBank95kE4BZaQBfMsGZ3RCkqwwtGHjKA`
 
 Or fork it and improve it yourself!
 
