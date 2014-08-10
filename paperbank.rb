@@ -25,8 +25,8 @@ class PaperBank
   def initialize
     g = KeyGenerator.new
     @key = g.get_key 0
-    puts @key.addr, @key.to_base58
-    exit
+    # puts @key.addr, @key.to_base58
+    # exit
   end
 
   def print_pairs
