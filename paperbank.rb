@@ -9,20 +9,31 @@ require_relative "lib/vendor/keygen"
 
 # note: chmod 666 /dev/usb/lp0
 PRINTER = "/dev/usb/lp0" # lp0 on rasp pi, on debian 7 is lp1 by default
-
+PRINTER = "/dev/usb/lp1" # dev only
 
 class PaperBank
-  def initialize
-    g = KeyGenerator.new
-    @key = g.get_key 0
+  def initialize(vanity_part)
+    vanitygen_cmd = "/home/makevoid/Sites/vanitygen/vanitygen"
+    output = `#{vanitygen_cmd} -v 1#{vanity_part} 2>&1`
+
+    if output.match("Address:")
+      address = output.match("Address: (.+?)\n")[1]
+      privkey = output.match(/Privkey \(hex\): (.+?)\n/)[1]
+      # puts address, privkey
+      @key = Bitcoin::Key.new privkey
+    else
+      puts "Vanitygen could not generate address, try running it manually"
+      exit
+    end
+
   end
 
   def print_pairs
     prepare
 
     print_one
-    sleep 6
-    print_one
+    # sleep 6
+    # print_one
   end
 
   private
@@ -52,7 +63,7 @@ class PaperBank
     qr = qrcode_img  priv
     qr.save @image_priv
     print_img_send @image_priv
-    #priv
+    # priv
     print_send priv
     line
     line
@@ -65,5 +76,5 @@ class PaperBank
 
 end
 
-bank = PaperBank.new
+bank = PaperBank.new ARGV[0]
 bank.print_pairs
