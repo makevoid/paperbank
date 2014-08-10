@@ -5,15 +5,15 @@
 This branch only changes one line from the main branch, and this is it:
 
 ```
-Bitcoin.network = :litecoin # supported out of the box: :testnet (bitcoin testnet), :litecoin, :litecoin_testnet, :freicoin, :namecoin, :namecoin_testnet
+Bitcoin.network = :dogecoin # supported out of the box: :testnet (bitcoin testnet), :litecoin, :litecoin_testnet, :freicoin, :namecoin, :namecoin_testnet
 ```
 
-By default it generates Litecoin wallets
+By default it generates Dogecoin wallets
 
-you can easily switch to namecoin, freicoin and testnets, enjoy!
+you can easily switch to litecoin, namecoin, freicoin and testnets, enjoy!
 
 
-#### Litecoin Paper Wallet Bank
+#### Dogecoin Paper Wallet Bank
 
 
 [![](http://uploads.makevoid.com/paperbank_final.png)](https://www.youtube.com/watch?v=CUM51acMHJY)

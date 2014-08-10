@@ -11,20 +11,30 @@ require_relative "lib/vendor/keygen"
 PRINTER = "/dev/usb/lp1" # lp0 on rasp pi, on debian 7 is lp1 by default
 
 
-Bitcoin.network = :litecoin # supported out of the box: :testnet (bitcoin testnet), :litecoin, :litecoin_testnet, :freicoin, :namecoin, :namecoin_testnet
+# notes: https://github.com/lian/bitcoin-ruby/issues/49#issuecomment-31079760
+
+Bitcoin::NETWORKS[:dogecoin] = {
+  project: :dogecoin,
+  address_version: 30.to_s(16),
+  privkey_version: 113.to_s(16),
+}
+
+Bitcoin.network = :dogecoin # supported out of the box: :testnet (bitcoin testnet), :litecoin, :litecoin_testnet, :freicoin, :namecoin, :namecoin_testnet
 
 class PaperBank
   def initialize
     g = KeyGenerator.new
     @key = g.get_key 0
+    puts @key.addr, @key.to_base58
+    exit
   end
 
   def print_pairs
     prepare
 
     print_one
-    sleep 6
-    print_one
+    # sleep 6
+    # print_one
   end
 
   private
