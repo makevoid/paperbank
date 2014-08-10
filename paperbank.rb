@@ -8,8 +8,10 @@ include PaperBankLib
 require_relative "lib/vendor/keygen"
 
 # note: chmod 666 /dev/usb/lp0
-PRINTER = "/dev/usb/lp0" # lp0 on rasp pi, on debian 7 is lp1 by default
+PRINTER = "/dev/usb/lp1" # lp0 on rasp pi, on debian 7 is lp1 by default
 
+
+Bitcoin.network = :litecoin # supported out of the box: :testnet (bitcoin testnet), :litecoin, :litecoin_testnet, :freicoin, :namecoin, :namecoin_testnet
 
 class PaperBank
   def initialize
