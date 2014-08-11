@@ -54,32 +54,6 @@ I will generate a vanity address soon.
 
 
 
-### small FAQ
-
-- why Paper Wallets?
-
-They are very useful as cold storage, and there are many undiscovered usages of having btc in "banknotes" form.
-
-You can print small banknotes (2mBTC - 20mBTC ~ 1 - 10 euro) and give it to your friends to let them try bitcoin.
-
-You can have paper wallets with your funds
-
-- why a thermal printer?
-
-The ability to create fast and cheap paper wallets it's key. The thing is
-
-- why Rasp - pi?
-
-It's very cheap and widespread, you can use any linux box if you like, just remember to not connect it to the internet anymore
-
-- why Mycelium is used in the video?
-
-You can use whichever wallet you prefer, blockchain, coinbase [insert your favourite wallet here] I found mycelium to be pretty straightforward in terms of cold storage, for maximum security you should always sign transactions offline :)
-
-- why Ruby?
-
-It was very fast to implement and to tinker with, you can go and rewrite it in your own favourite language.
-
 
 
 #### other generators
@@ -216,3 +190,33 @@ Thanks to all the bitcoin community!
 See another project I did with some friends: [http://donacoin.com](donacoin.com) - [https://github.com/makevoid/donacoin](github.com/makevoid/donacoin) A cryptocoin mining based donation system
 
 Another one, not bitcoin related: [http://thorrents.com](thorrents.com) - [https://github.com/makevoid/thorrents](github:makevoid/thorrents)
+
+
+
+### small FAQ
+
+- why Paper Wallets?
+
+They are very useful as cold storage, and there are many undiscovered usages of having btc in "banknotes" form.
+
+You can print small banknotes (2mBTC - 20mBTC ~ 1 - 10 euro) and give it to your friends to let them try bitcoin.
+
+You can have paper wallets with your funds
+
+- why a thermal printer?
+
+The ability to create fast and cheap paper wallets it's key. The thing is
+
+- why Rasp - pi?
+
+It's very cheap and widespread, you can use any linux box if you like, just remember to not connect it to the internet anymore
+
+- why Mycelium is used in the video?
+
+You can use whichever wallet you prefer, blockchain, coinbase [insert your favourite wallet here] I found mycelium to be pretty straightforward in terms of cold storage, for maximum security you should always sign transactions offline :)
+
+- why Ruby?
+
+It was very fast to implement and to tinker with, you can go and rewrite it in your own favourite language.
+
+
