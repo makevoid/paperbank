@@ -180,9 +180,15 @@ some milliBits so I can find time to improve this project:
 
 Or fork it and improve it yourself!
 
-Features/forks needed/expected:
+### Features/forks needed/expected:
 
-- feature: Vanity address patch - add support for vanitygen
+#### done:
+
+- feature: Vanity address patch - add support for vanitygen [done by @makevoid - vanitgen branch - needs integration]
+- feature: integration of other currencies [by @makevoid - Litecoin is in lite branch, Dogecoin is in doge branch + explanation on how to create a fork compatible with every currency]
+
+#### todo:
+
 - feature: passphrase patch - support password protected private key
 - feature: add hardware button to rasp pi via GPIO
 - feature: autolaunch everything, so you don't need an hdmi screen
