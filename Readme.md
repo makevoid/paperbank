@@ -138,7 +138,7 @@ cat templates/test.txt > /dev/usb/lp0
     `ruby paperbank.rb`
 
 
-on raspberry the printing is very slow! I will speed that up in the future!
+on raspberry the printing is a bit slow, compared to a normal linux box can achieve. I will speed that up in the future, there are some memory tweaks that can be done!
 
 - throw away the key you just created (you should have two copies)
 
