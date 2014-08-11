@@ -12,6 +12,18 @@
 This repo contains **all you need** to run your bitcoin PaperBank!
 PaperBank is another way to say: cold storage paper wallet printer
 
+### What you need
+
+- A Raspberry PI or similar mini and cheap linux box
+- An USB Thermal Printer
+- HDMI monitor, usb cable, usb power adapter (cellphone usb wall charger), sd card,
+
+
+### It's a DIY solution, you have to follow the installation procedures to install PaperBank on your Raspberry PI
+
+
+---
+
 Affordable: All for under ~ 60 USD
 
 #### Brief explanation:
