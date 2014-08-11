@@ -60,9 +60,9 @@ The ability to create fast and cheap paper wallets it's key. The thing is
 
 It's very cheap and widespread, you can use any linux box if you like, just remember to not connect it to the internet anymore
 
-- why Mycelium?
+- why Mycelium is used in the video?
 
-You can use whichever wallet you prefer, I found mycelium to be pretty straightforward in terms of cold storage, for maximum security you should always sign transactions offline :)
+You can use whichever wallet you prefer, blockchain, coinbase [insert your favourite wallet here] I found mycelium to be pretty straightforward in terms of cold storage, for maximum security you should always sign transactions offline :)
 
 - why Ruby?
 
