@@ -2,14 +2,13 @@ require 'escper' # https://github.com/michaelfranzl/ruby-escper
 require 'rqrcode_png'
 require 'bitcoin' # bitcoin-ruby
 
-require_relative "paperbank_lib"
+require_relative 'paperbank_lib'
 include PaperBankLib
 
-require_relative "lib/vendor/keygen"
+require_relative 'lib/vendor/keygen'
 
 # note: chmod 666 /dev/usb/lp0
-PRINTER = "/dev/usb/lp1" # lp0 on rasp pi, on debian 7 is lp1 by default
-
+PRINTER = '/dev/usb/lp1' # lp0 on rasp pi, on debian 7 is lp1 by default
 
 Bitcoin.network = :litecoin # supported out of the box: :testnet (bitcoin testnet), :litecoin, :litecoin_testnet, :freicoin, :namecoin, :namecoin_testnet
 
@@ -30,7 +29,7 @@ class PaperBank
   private
 
   def prepare
-    template = "main"
+    template = 'main'
     @image_pub  = "templates/#{template}.png"
     @image_priv = "templates/#{template}_priv.png"
 
@@ -38,12 +37,11 @@ class PaperBank
     qr.save @image_pub
   end
 
-
   def print_one
     # qr pub
-    print_send "BTC Paper Wallet"
+    print_send 'BTC Paper Wallet'
     line
-    print_send "ADDRESS"
+    print_send 'ADDRESS'
     print_img_send @image_pub
     # pub
     print_send format_addr @key.addr
@@ -51,10 +49,10 @@ class PaperBank
     # qr priv
     print_send "PRIVATE KEY (keep secret!):\n"
     priv = @key.to_base58 # ,priv, also there's to_bip38(passphrase) available
-    qr = qrcode_img  priv
+    qr = qrcode_img priv
     qr.save @image_priv
     print_img_send @image_priv
-    #priv
+    # priv
     print_send priv
     line
     line
@@ -64,7 +62,6 @@ class PaperBank
     `rm -f #{@image_pub}`
     `rm -f #{@image_priv}`
   end
-
 end
 
 bank = PaperBank.new
