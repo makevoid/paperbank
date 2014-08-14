@@ -3,7 +3,7 @@ module PaperBankLib
   # rqrcode
   def qrcode_img(string)
     # for private keys you need bigger size
-    size = string.size < 40 ? 4 : 6
+    size = string.size < 40 ? 4 : 8
     qr = RQRCode::QRCode.new(string, size: size, level: :h )
     png = qr.to_img                                             # returns an instance of ChunkyPNG
     png.resize 370, 370

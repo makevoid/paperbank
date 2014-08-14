@@ -1,6 +1,7 @@
 require 'escper' # https://github.com/michaelfranzl/ruby-escper
 require 'rqrcode_png'
-require 'bitcoin' # bitcoin-ruby
+# require 'bitcoin' # bitcoin-ruby
+# should not require bitcoin ruby
 
 require_relative "paperbank_lib"
 include PaperBankLib
@@ -13,13 +14,16 @@ VANITYGEN_CMD = "/home/makevoid/Sites/vanitygen/vanitygen"
 
 class PaperBank
   def initialize(vanity_part)
-    output = `#{VANITYGEN_CMD} -v 1#{vanity_part} 2>&1`
+    # output = `#{VANITYGEN_CMD} -v 1#{vanity_part} 2>&1`
+    output = `#{VANITYGEN_CMD} -v 1#{vanity_part} -e 2>&1`
 
     if output.match("Address:")
       address = output.match("Address: (.+?)\n")[1]
-      privkey = output.match(/Privkey \(hex\): (.+?)\n/)[1]
+      privkey = output.match(/Protkey: (.+?)\n/)[1]
       # puts address, privkey
-      @key = Bitcoin::Key.new privkey
+      @address = address
+      @privkey = privkey
+      # @key = Bitcoin::Key.new privkey
     else
       puts "Vanitygen could not generate address, try running it manually"
       exit
@@ -48,7 +52,7 @@ class PaperBank
     @image_pub  = "templates/#{template}.png"
     @image_priv = "templates/#{template}_priv.png"
 
-    qr = qrcode_img @key.addr
+    qr = qrcode_img @address
     qr.save @image_pub
   end
 
@@ -60,11 +64,11 @@ class PaperBank
     print_send "ADDRESS"
     print_img_send @image_pub
     # pub
-    print_send format_addr @key.addr
+    print_send format_addr @address
     space
     # qr priv
     print_send "PRIVATE KEY (keep secret!):\n"
-    priv = @key.to_base58 # ,priv, also there's to_bip38(passphrase) available
+    priv = @privkey # ,priv, also there's to_bip38(passphrase) available
     qr = qrcode_img  priv
     qr.save @image_priv
     print_img_send @image_priv

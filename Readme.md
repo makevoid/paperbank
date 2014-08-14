@@ -1,5 +1,10 @@
 # PaperBank
 
+### failbranch
+
+strange private keys generated from my vanitygen, I can't import them in blockchain.info - trying to make a ruby branch using the bitcoin gem
+PsPUPnkbz.....PaLpCmkT6YiS
+
 #### Bitcoin Paper Wallet Bank
 
 [video]
