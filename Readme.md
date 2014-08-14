@@ -1,5 +1,10 @@
 # PaperBank
 
+### Bip38 branch
+
+using bip38 from bitcoin ruby gem to generate bip38 password protected paper wallets (private key starts with the character 6)
+
+
 #### Bitcoin Paper Wallet Bank
 
 

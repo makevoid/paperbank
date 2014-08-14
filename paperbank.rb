@@ -1,25 +1,39 @@
-require 'escper' # https://github.com/michaelfranzl/ruby-escper
-require 'rqrcode_png'
-require 'bitcoin' # bitcoin-ruby
+require 'bundler/setup'
+Bundler.require :default
+
+# require 'escper' # https://github.com/michaelfranzl/ruby-escper
+# require 'rqrcode_png'
+# require 'bitcoin' # bitcoin-ruby
 
 require_relative "paperbank_lib"
 include PaperBankLib
 
-require_relative "lib/vendor/keygen"
+# require_relative "lib/vendor/keygen"
+
+puts "Insert your bip38 password:\n"
+BIP_38_PASS = STDIN.noecho(&:gets).strip
+puts "Insert your bip38 password again:\n"
+if BIP_38_PASS != STDIN.noecho(&:gets).strip
+  puts "Password mismatch, aborting"
+  exit
+end
 
 # note: chmod 666 /dev/usb/lp0
-PRINTER = "/dev/usb/lp0" # lp0 on rasp pi, on debian 7 is lp1 by default
+PRINTER = "/dev/usb/lp1" # lp0 on rasp pi, on debian 7 is lp1 by default
 
 
 class PaperBank
   def initialize
-    g = KeyGenerator.new
+    g = Bitcoin::Wallet::KeyGenerator.new
     @key = g.get_key 0
+    # raise @key.to_bip38(BIP_38_PASS).inspect
   end
 
   def print_pairs
     prepare
 
+    print_one
+    sleep 6
     print_one
     sleep 6
     print_one
@@ -48,7 +62,7 @@ class PaperBank
     space
     # qr priv
     print_send "PRIVATE KEY (keep secret!):\n"
-    priv = @key.to_base58 # ,priv, also there's to_bip38(passphrase) available
+    priv = @key.to_bip38 BIP_38_PASS # ,priv, also there's to_bip38(passphrase) available
     qr = qrcode_img  priv
     qr.save @image_priv
     print_img_send @image_priv
