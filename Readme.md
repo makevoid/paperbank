@@ -1,5 +1,10 @@
 # PaperBank
 
+### Website
+
+## "Paperbank.it":http://paperbank.it
+
+
 ### Bip38 branch
 
 using bip38 from bitcoin ruby gem to generate bip38 password protected paper wallets (private key starts with the character 6)
@@ -90,69 +95,24 @@ rasp pi links:
 - [olinuxino](https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-MICRO/open-source-hardware)
 
 
-### Install on raspberry pi
+### Install on Raspberry PI
 
-- get a brand new sd card or do a safe format
-- get NOOBS release from raspbian official website! (check the sha) and copy it to the sd
-- install raspbian and run it
+This section has been moved to:
 
-- after install, open LXTerminal
+- "Short Installation":http://paperbank.it/install/raspberry/short/
+- "Full Installation":http://paperbank.it/install/raspberry/
 
-- install ssl-dev
+### Install on Linux
 
-    `sudo apt-get install libssl-dev -y`
+This is a much standard install, It works on Debian and should work on ubuntu (some apt package names may change)
 
-- install ruby development files
+- "Install on Linux (Debian)":http://paperbank.it/install/linux/
 
-    `sudo apt-get install ruby1.9.1-dev -y`
+### Install on Mac OS
 
-- install rmagick dependencies
+For users: Coming soon.
 
-    `sudo apt-get install libmagickcore-dev libmagickwand-dev -y`
-
-- get the code
-
-    `git clone https://github.com/makevoid/paperbank`
-
-
-- install ruby gems
-
-```
-sudo gem install escper         --no-ri --no-rdoc
-sudo gem install rqrcode_png    --no-ri --no-rdoc
-sudo gem install bitcoin-ruby   --no-ri --no-rdoc
-sudo gem install ffi            --no-ri --no-rdoc
-```
-
-
-if you are truly paranoid you can make the above steps offline, by transferring this repo and the ruby gems via usb stick and installing them manually
-
-- change
-
-    `sudo chmod 0666 /dev/usb/lp0`
-
-- test the printer
-
-```
-echo "\nOK MASTER\n\n\n" > templates/test.txt
-cat templates/test.txt > /dev/usb/lp0
-```
-
-- run
-
-    `ruby paperbank.rb`
-
-
-on raspberry the printing is a bit slow, compared to a normal linux box can achieve. I will speed that up in the future, there are some memory tweaks that can be done!
-
-- throw away the key you just created (you should have two copies)
-
-- DISCONNECT INTERNET and NEVER RECONNECT AGAIN (otherwise you lose all the benefits of the cold storage)
-
-
-you now have a cold paper wallets machine! enjoy!
-
-
+For hackers that want that now: Open "OSX CUPS webpage":http://localhost:631, add your usb thermal printer as Generic printer, then go into the code and change all the lines where the output is piped directly to usb (as it's possible in linux) [/dev/usb/ldX] to cups commands (you need to write contents to a file and then issue the print command passing that file as argument)
 
 
 #### notes:
