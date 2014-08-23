@@ -2,7 +2,7 @@
 
 ### Website
 
-## "Paperbank.it":http://paperbank.it
+## [Paperbank.it](http://paperbank.it)
 
 
 ### Bip38 branch
@@ -99,14 +99,14 @@ rasp pi links:
 
 This section has been moved to:
 
-- "Short Installation":http://paperbank.it/install/raspberry/short/
-- "Full Installation":http://paperbank.it/install/raspberry/
+- [Installation (Condensed)](http://paperbank.it/install/raspberry/short/)
+- [Installation (Full)](http://paperbank.it/install/raspberry/)
 
 ### Install on Linux
 
 This is a much standard install, It works on Debian and should work on ubuntu (some apt package names may change)
 
-- "Install on Linux (Debian)":http://paperbank.it/install/linux/
+- [Install on Linux (Debian)](http://paperbank.it/install/linux/)
 
 ### Install on Mac OS
 
