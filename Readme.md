@@ -110,9 +110,11 @@ This is a much standard install, It works on Debian and should work on ubuntu (s
 
 ### Install on Mac OS
 
-For users: Coming soon.
+For users: **Coming soon**.
 
-For hackers that want that now: Open "OSX CUPS webpage":http://localhost:631, add your usb thermal printer as Generic printer, then go into the code and change all the lines where the output is piped directly to usb (as it's possible in linux) [/dev/usb/ldX] to cups commands (you need to write contents to a file and then issue the print command passing that file as argument)
+For "hackers" that want it now: 
+
+Open "OSX CUPS webpage":http://localhost:631, add your usb thermal printer as Generic printer, then go into the code and change all the lines where the output is piped directly to usb (as it's possible in linux) [/dev/usb/ldX] to cups commands (you need to write contents to a file and then issue the print command passing that file as argument)
 
 
 #### notes:
@@ -127,7 +129,7 @@ check also VANITY branch for vanity address implementations
 
 #### **Please donate**
 some milliBits so I can find time to improve this project:
-#### `1PBank95kE4BZaQBfMsGZ3RCkqwwtGHjKA`
+#### [1PBank95kE4BZaQBfMsGZ3RCkqwwtGHjKA](https://blockchain.info/address/1PBank95kE4BZaQBfMsGZ3RCkqwwtGHjKA)
 
 Or fork it and improve it yourself!
 
@@ -137,10 +139,11 @@ Or fork it and improve it yourself!
 
 - feature: Vanity address patch - add support for vanitygen [done by @makevoid - vanitgen branch - needs integration]
 - feature: integration of other currencies [by @makevoid - Litecoin is in lite branch, Dogecoin is in doge branch + explanation on how to create a fork compatible with every currency]
+- feature: BIP38 password protection - password protected private key
 
 #### todo:
 
-- feature: passphrase patch - support password protected private key
+- bundle: docker image
 - feature: add hardware button to rasp pi via GPIO
 - feature: autolaunch everything, so you don't need an hdmi screen
 - dependencies: try to remove imagemagick & rmagick requirements
@@ -150,7 +153,7 @@ Or fork it and improve it yourself!
 
 
 The more donations, the faster the features!
-Thanks to all the bitcoin community!
+Donations will be split to all the contributors, you may want to contribute starting from picking a todo above or with another idea! Forks & pull requests are very welcome.
 
 See another project I did with some friends: [http://donacoin.com](donacoin.com) - [https://github.com/makevoid/donacoin](github.com/makevoid/donacoin) A cryptocoin mining based donation system
 
