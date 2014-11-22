@@ -17,7 +17,6 @@ module PaperBankLib
   end
 
   # view
-
   def format_addr(addr)
     spaces = 3
     addr_fmt = addr.split("").each_slice(4).with_index.map do |a, idx|
@@ -27,7 +26,6 @@ module PaperBankLib
     end.join(" ")
     "#{" "*spaces}#{addr_fmt}"
   end
-
 
 
   # utils

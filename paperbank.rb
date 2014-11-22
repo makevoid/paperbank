@@ -1,9 +1,13 @@
-require 'bundler/setup'
-Bundler.require :default
+if defined?(Bundler)
+  require 'bundler/setup'
+  Bundler.require :default
+else
+  require 'escper'  # https://github.com/michaelfranzl/ruby-escper
+  require 'rqrcode_png'
+  require 'bitcoin' # bitcoin-ruby
+end
 
-# require 'escper' # https://github.com/michaelfranzl/ruby-escper
-# require 'rqrcode_png'
-# require 'bitcoin' # bitcoin-ruby
+require 'io/console'
 
 require_relative "paperbank_lib"
 include PaperBankLib
@@ -18,7 +22,7 @@ if BIP_38_PASS != STDIN.noecho(&:gets).strip
   exit
 end
 
-# note: chmod 666 /dev/usb/lp0
+# note: sudo chmod 666 /dev/usb/lp1
 PRINTER = "/dev/usb/lp1" # lp0 on rasp pi, on debian 7 is lp1 by default
 
 
@@ -29,7 +33,7 @@ class PaperBank
     # raise @key.to_bip38(BIP_38_PASS).inspect
   end
 
-  def print_pairs
+  def print_sequence
     prepare
 
     print_one
@@ -50,7 +54,6 @@ class PaperBank
     qr.save @image_pub
   end
 
-
   def print_one
     # qr pub
     print_send "BTC Paper Wallet"
@@ -66,7 +69,7 @@ class PaperBank
     qr = qrcode_img  priv
     qr.save @image_priv
     print_img_send @image_priv
-    #priv
+    # priv
     print_send priv
     line
     line
@@ -79,5 +82,8 @@ class PaperBank
 
 end
 
+
+# main
+
 bank = PaperBank.new
-bank.print_pairs
+bank.print_sequence
