@@ -1,5 +1,22 @@
 # PaperBank
 
+### Vanitygen branch
+
+### install vanitygen
+
+	
+	git clone https://github.com/samr7/vanitygen.git vendor/vanitygen
+	cd vendor/vanitygen && make && cd ../..
+	chmod 755 vendor/vanitygen/vanitygen
+
+### run
+
+    ruby paperbank.rb foo
+
+
+it will generate `1foo` address
+(keep the name short, 3-4 letters, don't go over 6 as it can take a day or more to generate them)
+
 #### Bitcoin Paper Wallet Bank
 
 [video]

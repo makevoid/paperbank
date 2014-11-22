@@ -5,7 +5,7 @@ module PaperBankLib
     # for private keys you need bigger size
     size = string.size < 40 ? 4 : 6
     qr = RQRCode::QRCode.new(string, size: size, level: :h )
-    png = qr.to_img                                             # returns an instance of ChunkyPNG
+    png = qr.to_img # returns an instance of ChunkyPNG
     png.resize 370, 370
   end
 
@@ -17,7 +17,6 @@ module PaperBankLib
   end
 
   # view
-
   def format_addr(addr)
     spaces = 3
     addr_fmt = addr.split("").each_slice(4).with_index.map do |a, idx|
@@ -27,7 +26,6 @@ module PaperBankLib
     end.join(" ")
     "#{" "*spaces}#{addr_fmt}"
   end
-
 
 
   # utils
