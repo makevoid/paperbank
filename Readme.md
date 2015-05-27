@@ -5,6 +5,15 @@
 ## [Paperbank.it](http://paperbank.it)
 
 
+### Bro/Sis project
+
+#### [BitNFC.org](http://bitnfc.org)
+
+### Dog project ^^
+
+#### [DogeNFC.com](http://dogenfc.com)
+
+
 ### Bip38 branch
 
 using bip38 from bitcoin ruby gem to generate bip38 password protected paper wallets (private key starts with digit 6)
