@@ -75,6 +75,7 @@ class PaperBank
     print_send "- for iOS:"
     print_send "  - Download 'BreadWallet'"
     print_send "- Select 'Scan QR Code'"
+    print_send "- Scan the Private Key"
     print_send "- Enter the password"
     print_send "- Yay! You should have the funds in your wallet now."
     space
