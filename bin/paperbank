@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby -KU
+
+require_relative '../paperbank'
+
+bank = PaperBank.new
+bank.print_sequence

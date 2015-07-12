@@ -1,11 +1,5 @@
-if defined?(Bundler)
-  require 'bundler/setup'
-  Bundler.require :default
-else
-  require 'escper'  # https://github.com/michaelfranzl/ruby-escper
-  require 'rqrcode_png'
-  require 'bitcoin' # bitcoin-ruby
-end
+require 'bundler/setup'
+Bundler.require :default
 
 require 'io/console'
 
@@ -23,7 +17,7 @@ if BIP_38_PASS != STDIN.noecho(&:gets).strip
 end
 
 # note: sudo chmod 666 /dev/usb/lp1
-PRINTER = "/dev/usb/lp1" # lp0 on rasp pi, on debian 7 is lp1 by default
+PRINTER = "/dev/usb/lp0" # lp0 on rasp pi or ubuntu, on debian 7 is lp1 by default
 
 
 class PaperBank
@@ -37,10 +31,10 @@ class PaperBank
     prepare
 
     print_one
-    sleep 6
-    print_one
-    sleep 6
-    print_one
+    # sleep 6
+    # print_one
+    # sleep 6
+    # print_one
   end
 
   private
@@ -73,6 +67,18 @@ class PaperBank
     print_send priv
     line
     line
+    # howto
+    print_send "To use this wallet:"
+    print_send "- for Android:"
+    print_send "  - Download 'Mycelium'"
+    print_send "  - Select 'Cold storage' from the prefs menu"
+    print_send "- for iOS:"
+    print_send "  - Download 'BreadWallet'"
+    print_send "- Select 'Scan QR Code'"
+    print_send "- Enter the password"
+    print_send "- Yay! You should have the funds in your wallet now."
+    space
+    space
   end
 
   def clean
@@ -81,9 +87,3 @@ class PaperBank
   end
 
 end
-
-
-# main
-
-bank = PaperBank.new
-bank.print_sequence

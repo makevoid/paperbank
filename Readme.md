@@ -1,5 +1,40 @@
 # PaperBank
 
+### Usage
+
+Install
+
+    rake build
+
+Run
+
+    rake
+
+
+
+
+### Install on Raspberry PI
+
+This section has been moved to:
+
+- [Installation (Condensed)](http://paperbank.it/install/raspberry/short/)
+- [Installation (Full)](http://paperbank.it/install/raspberry/)
+
+### Install on Linux
+
+This is a much standard install, It works on Debian and should work on ubuntu (some apt package names may change)
+
+- [Install on Linux (Debian)](http://paperbank.it/install/linux/)
+
+### Install on Mac OS
+
+For users: **Coming soon**.
+
+For "hackers" that want it now:
+
+Open "OSX CUPS webpage":http://localhost:631, add your usb thermal printer as Generic printer, then go into the code and change all the lines where the output is piped directly to usb (as it's possible in linux) [/dev/usb/ldX] to cups commands (you need to write contents to a file and then issue the print command passing that file as argument)
+
+
 ### Website
 
 ## [Paperbank.it](http://paperbank.it)
@@ -104,28 +139,6 @@ rasp pi links:
 - [olinuxino](https://www.olimex.com/Products/OLinuXino/A20/A20-OLinuXino-MICRO/open-source-hardware)
 
 
-### Install on Raspberry PI
-
-This section has been moved to:
-
-- [Installation (Condensed)](http://paperbank.it/install/raspberry/short/)
-- [Installation (Full)](http://paperbank.it/install/raspberry/)
-
-### Install on Linux
-
-This is a much standard install, It works on Debian and should work on ubuntu (some apt package names may change)
-
-- [Install on Linux (Debian)](http://paperbank.it/install/linux/)
-
-### Install on Mac OS
-
-For users: **Coming soon**.
-
-For "hackers" that want it now: 
-
-Open "OSX CUPS webpage":http://localhost:631, add your usb thermal printer as Generic printer, then go into the code and change all the lines where the output is piped directly to usb (as it's possible in linux) [/dev/usb/ldX] to cups commands (you need to write contents to a file and then issue the print command passing that file as argument)
-
-
 #### notes:
 
 put something inside the the LAN hole so no-one can accidentally connect an ethernet cable, a piece of sponge will do  in most cases, a chewing gum is a bit extreme and not recommended if you want to use that ethernet port again :)
@@ -195,5 +208,3 @@ You can use whichever wallet you prefer, blockchain, coinbase [insert your favou
 - why Ruby?
 
 It was very fast to implement and to tinker with, you can go and rewrite it in your own favourite language.
-
-
