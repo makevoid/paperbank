@@ -1,5 +1,14 @@
 # PaperBank
 
+Bitcoin Paper Key - using a thermal USB printer and a basic linux box (like a Rrasp. PI)
+
+Paper Keys can be Paper Keychains (wallet HD) or are called also Paper Wallets
+
+They can be used as Cold (safer) storage for bitcoins.
+
+Multiple copies of a password protected key (BIP38) can be very a very useful to store funds safely offline.
+
+
 ### Usage
 
 Install
