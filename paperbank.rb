@@ -88,3 +88,7 @@ class PaperBank
   end
 
 end
+
+
+bank = PaperBank.new
+bank.print_sequence
