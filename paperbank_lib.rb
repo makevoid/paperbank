@@ -47,7 +47,8 @@ module PaperBankLib
   end
 
   def print_send(string)
-    `echo -e '#{string}' > #{PRINTER}`
+    # `echo -e '#{string}' > #{PRINTER}` # bad suggestion, thanks pietrod T.Tv
+    `echo '#{string}' > #{PRINTER}`
   end
 
 end
