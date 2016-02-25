@@ -49,6 +49,11 @@ Open "OSX CUPS webpage":http://localhost:631, add your usb thermal printer as Ge
 ## [Paperbank.it](http://paperbank.it)
 
 
+# Paperbank Pocket
+
+## https://github.com/makevoid/paperbank-pocket
+
+
 ### Bro/Sis project
 
 #### [BitNFC.org](http://bitnfc.org)
