@@ -51,7 +51,13 @@ Open "OSX CUPS webpage":http://localhost:631, add your usb thermal printer as Ge
 
 # Paperbank Pocket
 
+Check the new cool project:
+
 ## https://github.com/makevoid/paperbank-pocket
+
+Using your smartphone and a pocket photo printer to print paper wallets!!!
+
+
 
 
 ### Bro/Sis project
