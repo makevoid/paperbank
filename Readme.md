@@ -41,7 +41,7 @@ For users: **Coming soon**.
 
 For "hackers" that want it now:
 
-Open "OSX CUPS webpage":http://localhost:631, add your usb thermal printer as Generic printer, then go into the code and change all the lines where the output is piped directly to usb (as it's possible in linux) [/dev/usb/ldX] to cups commands (you need to write contents to a file and then issue the print command passing that file as argument)
+Open "OSX CUPS webpage": http://localhost:631, add your usb thermal printer as Generic printer, then go into the code and change all the lines where the output is piped directly to usb (as it's possible in linux) [/dev/usb/ldX] to cups commands (you need to write contents to a file and then issue the print command passing that file as argument)
 
 
 ### Website
