@@ -11,6 +11,7 @@ module PaperBankLib
 
   # escper
   def print_img_send(path)
+    return if TEST_ENV
     File.open(PRINTER,'w') do |f|
       f.write Escper::Img.new(path, :file).to_s
     end
@@ -47,8 +48,13 @@ module PaperBankLib
   end
 
   def print_send(string)
+    return print_debug(string) if TEST_ENV
     # `echo -e '#{string}' > #{PRINTER}` # bad suggestion, thanks pietrod T.Tv
     `echo '#{string}' > #{PRINTER}`
+  end
+
+  def print_debug(string)
+    puts string
   end
 
 end

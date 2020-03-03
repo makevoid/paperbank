@@ -17,10 +17,14 @@ end
 # note: you may need to run "sudo chmod 666 /dev/usb/lp1" or give your account permissions on debian
 PRINTER = "/dev/usb/lp0" # lp0 on rasp pi or ubuntu, on debian 7 is lp1 by default
 
+# don't use the printer, just print to screen when in test "mode"
+TEST_ENV = ENV["TEST"] == "1"
+
+require 'bitcoin/key'
+
 class PaperBank
   def initialize
-    g = Bitcoin::Wallet::KeyGenerator.new
-    @key = g.get_key 0
+    @key = Bitcoin::Key.generate
   end
 
   def print_sequence
