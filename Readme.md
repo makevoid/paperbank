@@ -11,13 +11,25 @@ Multiple copies of a password protected key (BIP38) can be very a very useful to
 
 ### Usage
 
-Install
+Install dependencies:
 
-    rake build
+- Imagemagick (Ubuntu/Debian):
 
-Run
+    apt-get install imagemagick libmagickcore-dev libmagickwand-dev
 
-    rake
+- Imagemagick (Mac OS):
+
+    brew install imagemagick
+
+
+Install:
+
+    bundle
+
+
+Run:
+
+    bunle exec rake
 
 
 
@@ -116,19 +128,6 @@ You can then print wallets for yourself, or paper wallets where you deposit smal
 
 note: It doesn't provide a real banking "feature", just the generations of accounts (address/private key pairs), you have to apply phisical security measure to those wallets!
 
-Donate to get password encrypted wallets sooner!
-
-
-### Please Donate!
-
-#### BTC: `1PBank95kE4BZaQBfMsGZ3RCkqwwtGHjKA`
-
-I will generate a vanity address soon.
-(todo: put this text at the end of Readme.md as well)
-
-
-
-
 
 #### other generators
 
@@ -167,14 +166,6 @@ check also VANITY branch for vanity address implementations
 
 
 
-### Donations, forks and new features!
-
-#### **Please donate**
-some milliBits so I can find time to improve this project:
-#### [1PBank95kE4BZaQBfMsGZ3RCkqwwtGHjKA](https://blockchain.info/address/1PBank95kE4BZaQBfMsGZ3RCkqwwtGHjKA)
-
-Or fork it and improve it yourself!
-
 ### Features/forks needed/expected:
 
 #### done:
@@ -193,13 +184,6 @@ Or fork it and improve it yourself!
 - speed: printing speedup (manage memory more efficiently)
 - speed: lower language optimizations
 
-
-The more donations, the faster the features!
-Donations will be split to all the contributors, you may want to contribute starting from picking a todo above or with another idea! Forks & pull requests are very welcome.
-
-See another project I did with some friends: [http://donacoin.com](donacoin.com) - [https://github.com/makevoid/donacoin](github.com/makevoid/donacoin) A cryptocoin mining based donation system
-
-Another one, not bitcoin related: [http://thorrents.com](thorrents.com) - [https://github.com/makevoid/thorrents](github:makevoid/thorrents)
 
 
 
