@@ -1,3 +1,9 @@
+Note: this is a very old open source project I did when I discovered bitcoin 
+
+[@makevoid](https://github.com/makevoid)
+
+---
+
 # PaperBank
 
 Bitcoin Paper Key - using a thermal USB printer and a basic linux box (like a Rrasp. PI)
