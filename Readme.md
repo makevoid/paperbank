@@ -2,6 +2,9 @@ Note: this is a very old open source project I did when I discovered bitcoin
 
 [@makevoid](https://github.com/makevoid)
 
+
+original readme:
+
 ---
 
 # PaperBank
